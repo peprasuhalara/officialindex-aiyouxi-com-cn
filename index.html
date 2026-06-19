@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 一段柔光中的陪伴</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fafaf8;
+      font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", Georgia, serif;
+      line-height: 1.75;
+      color: #2c2c2a;
+      padding: 2.5rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page-wrap {
+      max-width: 680px;
+      width: 100%;
+    }
+
+    /* 开场短句 */
+    .opening {
+      margin-top: 2.4rem;
+      font-size: 1.8rem;
+      font-weight: 350;
+      letter-spacing: 0.02em;
+      color: #3e4a3b;
+      border-left: 3px solid #b3bfa8;
+      padding-left: 1.2rem;
+      line-height: 1.5;
+    }
+
+    .opening span {
+      display: block;
+      font-size: 1rem;
+      margin-top: 0.4rem;
+      color: #7a8872;
+      font-weight: 300;
+    }
+
+    /* 承接段落 */
+    .story-block {
+      margin: 2.8rem 0 2rem;
+    }
+
+    .story-block p {
+      margin-bottom: 1.4rem;
+      text-indent: 2em;
+      font-size: 1.05rem;
+      color: #3b3b38;
+    }
+
+    .story-block p:first-of-type {
+      text-indent: 0;
+    }
+
+    /* 特点列表 —— 温和卡片式 */
+    .feature-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 2.4rem 0 2.8rem;
+    }
+
+    .feature-item {
+      background: #fffffffa;
+      border: 1px solid #e3e2da;
+      border-radius: 24px;
+      padding: 1.2rem 1.6rem;
+      transition: box-shadow 0.2s, background 0.15s;
+    }
+
+    .feature-item:hover {
+      background: #f4f3ed;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02), 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .feature-item strong {
+      display: inline-block;
+      font-weight: 500;
+      color: #5b6b4e;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.2rem;
+      font-size: 1.1rem;
+    }
+
+    .feature-item p {
+      margin: 0.25rem 0 0;
+      font-size: 0.96rem;
+      color: #4f4f4a;
+      line-height: 1.6;
+    }
+
+    /* 温和结尾 */
+    .closing {
+      margin: 2.6rem 0 3rem;
+      padding: 1.8rem 0 1rem;
+      border-top: 1px solid #dcd9cf;
+      font-size: 1rem;
+      color: #5b5b55;
+      text-align: center;
+      letter-spacing: 0.2px;
+    }
+
+    .closing a {
+      color: #5d7352;
+      text-decoration: none;
+      border-bottom: 1px dashed #bcc8af;
+      font-weight: 400;
+      transition: border-bottom 0.2s, color 0.2s;
+    }
+
+    .closing a:hover {
+      color: #374230;
+      border-bottom-style: solid;
+    }
+
+    /* FAQ摘要（轻量） */
+    .faq-note {
+      background: #f2f1ea;
+      border-radius: 36px;
+      padding: 1.2rem 1.8rem;
+      margin: 1.8rem 0 2.2rem;
+      font-size: 0.95rem;
+      color: #3f3f3a;
+    }
+
+    .faq-note summary {
+      font-weight: 450;
+      cursor: pointer;
+      color: #4b5a44;
+      padding: 0.1rem 0;
+      list-style: none;
+    }
+
+    .faq-note summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-note summary:before {
+      content: "❀  ";
+      color: #8f9f83;
+    }
+
+    .faq-note p {
+      margin-top: 0.7rem;
+      padding-left: 1.4rem;
+      border-left: 2px solid #cbd4be;
+    }
+
+    /* 页脚留白 */
+    .footer-mute {
+      font-size: 0.8rem;
+      color: #a6a69b;
+      text-align: center;
+      margin: 3.5rem 0 0.8rem;
+      letter-spacing: 0.3px;
+    }
+
+    /* 响应式 */
+    @media (max-width: 480px) {
+      body {
+        padding: 1.6rem 0.8rem;
+      }
+      .opening {
+        font-size: 1.5rem;
+        padding-left: 1rem;
+      }
+      .feature-item {
+        padding: 1rem 1.2rem;
+      }
+      .faq-note {
+        padding: 1rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+
+    <!-- 开场短句 -->
+    <div class="opening">
+      游戏是一张缓慢展开的纸。
+      <span>—— 折痕里藏着时间，空白处留着想象。</span>
+    </div>
+
+    <!-- 承接段落 -->
+    <div class="story-block">
+      <p>很多人忘记了自己最初为什么打开一个游戏。或许只是因为某个午后，屏幕里亮起一片陌生的森林，或是听到一段简单的旋律。那种感觉不像征服，更像一次偶然的散步——你并不知道前方会遇见什么，但每一步都走得踏实。这正是「爱游戏」希望保留的东西：不催促，不喧哗，只是安静地提供一个可以停留的角落。</p>
+      <p>我们相信，游戏的内核从来不是胜负或榜单，而是一种朴素的陪伴。就像小时候蹲在树下看蚂蚁搬家，或者坐在窗边听雨声——那些看似无目的的时光，往往最贴近内心。如今屏幕越来越大，但那种纯粹的「在场感」却变得更稀缺了。于是就有了这个小小的站点，它不标榜任何技术或潮流，只想重新拾起那份温和的注意力。</p>
+    </div>
+
+    <!-- 特点列表（卡片式） -->
+    <div class="feature-grid">
+      <div class="feature-item">
+        <strong>◇ 不赶时间的节奏</strong>
+        <p>没有倒计时、每日任务或催促弹窗。你想停就停，想继续就继续，像翻一本没有页码的书。</p>
+      </div>
+      <div class="feature-item">
+        <strong>◇ 安静的美学角落</strong>
+        <p>界面克制，文字素净，不弹出刺眼的广告或横幅。视觉上尽可能后退，把注意力还给内容本身。</p>
+      </div>
+      <div class="feature-item">
+        <strong>◇ 有温度的探索感</strong>
+        <p>每一个入口都像一条小径，通向不同的叙事或场景。你可以在里面慢慢走，不必担心走错路。</p>
+      </div>
+      <div class="feature-item">
+        <strong>◇ 源于真实的松弛</strong>
+        <p>这里的一切都基于对「游戏原本模样」的尊重：它可以是陪伴、是观察、是片刻的出神，而不是消耗。</p>
+      </div>
+    </div>
+
+    <!-- FAQ摘要（轻量细节） -->
+    <details class="faq-note">
+      <summary>一些你可能想问的</summary>
+      <p>「爱游戏」是什么？它不是一个社区论坛，也不是资源库。它更像一个安静的阅读与感知空间——通过文字、画面与声音的片段，带你重新回到游戏最开始的温度里。如果你曾有过「打开游戏却不知道玩什么」的时刻，或许可以来这里坐坐。没有任何注册门槛，也不需要下载任何东西。</p>
+    </details>
+
+    <!-- 温和结尾（嵌入链接） -->
+    <div class="closing">
+      如果你也觉得，游戏可以是一种柔和的习惯，不妨偶尔回到 <a href="https://officialindex-aiyouxi.com.cn">爱游戏</a> 里待一会儿。<br>
+      像打开一扇朝北的窗，风很淡，光也刚刚好。
+    </div>
+
+    <div class="footer-mute">
+      —— 温和 · 从容 · 不打扰 ——
+    </div>
+
+  </div>
+</body>
+</html>
