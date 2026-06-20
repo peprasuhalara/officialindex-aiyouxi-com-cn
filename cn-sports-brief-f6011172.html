@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杂志专题 · 熊猫体育</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
+            background: #f6f5f1;
+            color: #1e1e1e;
+            line-height: 1.7;
+        }
+        .page-wrap {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+        /* hero 横幅 */
+        .hero {
+            background: #ffffff;
+            padding: 3.5rem 2rem 2.8rem;
+            margin-bottom: 2.8rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 10%; right: 10%;
+            height: 5px;
+            background: linear-gradient(90deg, transparent, #b7a78a, #5c4f3a, #b7a78a, transparent);
+            border-radius: 0 0 6px 6px;
+        }
+        .hero-label {
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #8a7f6c;
+            margin-bottom: 1.2rem;
+            font-weight: 500;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 350;
+            letter-spacing: 2px;
+            color: #2a2a2a;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+        .hero h1 span {
+            font-weight: 550;
+            color: #1a1a1a;
+            background: #ece7dc;
+            padding: 0 0.3rem;
+        }
+        .hero p {
+            color: #5a5347;
+            max-width: 480px;
+            margin: 1.2rem auto 0;
+            font-size: 1.05rem;
+            font-weight: 350;
+        }
+        /* 背景说明卡片 */
+        .bg-card {
+            background: #fefcf9;
+            padding: 2rem 2rem 1.8rem;
+            border-radius: 28px 8px 28px 8px;
+            margin-bottom: 2.4rem;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+            border: 1px solid #eae5db;
+        }
+        .bg-card h2 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #6b6052;
+            margin-bottom: 1.2rem;
+            border-bottom: 1px dashed #d9d1c3;
+            padding-bottom: 0.5rem;
+        }
+        .bg-card p {
+            color: #3d3a34;
+            font-size: 0.95rem;
+            margin-bottom: 0.7rem;
+        }
+        .bg-card p:last-child {
+            margin-bottom: 0;
+        }
+        /* 三段式自然介绍 */
+        .three-cols {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        .section-item {
+            background: #ffffff;
+            padding: 1.8rem 1.8rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+            border-left: 4px solid #cdc3b2;
+            transition: border-color 0.2s;
+        }
+        .section-item:hover {
+            border-left-color: #7b7060;
+        }
+        .section-item .num {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: #a39986;
+            letter-spacing: 1px;
+            margin-bottom: 0.4rem;
+            display: inline-block;
+            background: #f0ece4;
+            padding: 0 0.6rem;
+            border-radius: 30px;
+            line-height: 1.8;
+        }
+        .section-item h3 {
+            font-size: 1.2rem;
+            font-weight: 450;
+            color: #2f2c26;
+            margin: 0.2rem 0 0.6rem;
+            letter-spacing: -0.01em;
+        }
+        .section-item p {
+            font-size: 0.95rem;
+            color: #43403a;
+            margin-bottom: 0.5rem;
+        }
+        .section-item a {
+            color: #3f3a30;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #b7ad9b;
+            font-weight: 450;
+            transition: color 0.15s;
+        }
+        .section-item a:hover {
+            color: #000000;
+            text-decoration-color: #000;
+        }
+        /* FAQ 摘要 */
+        .faq-mini {
+            background: #f2efe8;
+            padding: 2rem 2rem 2.2rem;
+            border-radius: 40px 12px 40px 12px;
+            margin-bottom: 2.8rem;
+        }
+        .faq-mini h2 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #4d463b;
+            letter-spacing: 1px;
+            margin-bottom: 1.4rem;
+            border-bottom: 1px solid #dad2c2;
+            padding-bottom: 0.6rem;
+        }
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: #2c2a25;
+            margin-bottom: 0.15rem;
+        }
+        .faq-item p {
+            font-size: 0.9rem;
+            color: #555049;
+            margin-left: 0.2rem;
+        }
+        /* 页尾访问提示 */
+        .footer-note {
+            border-top: 1px solid #dcd5c9;
+            padding-top: 2.2rem;
+            text-align: center;
+        }
+        .footer-note p {
+            font-size: 0.95rem;
+            color: #4b453c;
+            max-width: 540px;
+            margin: 0 auto 0.6rem;
+        }
+        .footer-note .link-sentence {
+            font-size: 1rem;
+            background: #ffffff;
+            display: inline-block;
+            padding: 0.5rem 1.6rem;
+            border-radius: 60px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            border: 1px solid #ddd6c8;
+            color: #2a2722;
+        }
+        .footer-note .link-sentence a {
+            color: #1f1d19;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 500;
+        }
+        .footer-note .link-sentence a:hover {
+            color: #000;
+        }
+        .footer-note small {
+            display: block;
+            margin-top: 1.8rem;
+            font-size: 0.75rem;
+            color: #928a7b;
+            letter-spacing: 0.4px;
+        }
+        /* 响应式 */
+        @media (max-width: 480px) {
+            .page-wrap { padding: 1.2rem 1rem 3rem; }
+            .hero { padding: 2.5rem 1.2rem 2rem; }
+            .hero h1 { font-size: 2.2rem; }
+            .bg-card, .faq-mini { padding: 1.5rem; }
+            .section-item { padding: 1.5rem 1.2rem; }
+            .footer-note .link-sentence { padding: 0.4rem 1.2rem; font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+    <!-- 首页横幅 hero -->
+    <div class="hero">
+        <div class="hero-label">· 杂志专题 ·</div>
+        <h1>赛事 <span>熊猫体育</span> 观察</h1>
+        <p>从竞技数据到观赛文化，一份聚焦赛场内外的深度简报</p>
+    </div>
+
+    <!-- 背景说明 -->
+    <div class="bg-card">
+        <h2>☰ 背景 · 缘起</h2>
+        <p>「熊猫体育」并非一个简单的品牌符号，它承载着对体育内容聚合与信息透明化的长期探索。早期团队关注到赛事直播与赛后分析之间存在信息断层——大量深度数据被淹没在碎片化报道中。因此，该平台自始便以「降低优质体育内容的获取门槛」为出发点，整合赛程、战术复盘与运动员访谈，试图构建更连贯的观赛知识链。</p>
+        <p>经过数次产品迭代，如今它已覆盖超过二十个主流项目，并以中文社区的高密度信息整理为特色。本次专题将围绕其内容生态的三个基本面展开介绍。</p>
+    </div>
+
+    <!-- 三段自然介绍（杂志式章节） -->
+    <div class="three-cols">
+        <!-- 第一段 -->
+        <div class="section-item">
+            <span class="num">01 内容纵深</span>
+            <h3>赛前前瞻与赛后解构</h3>
+            <p>每一轮焦点赛事前，编辑团队会提取对阵双方的近期状态、交锋记录及伤病变量，形成精炼的赛前简报。而在比赛结束后数小时内，即发布包含战术板图解、球员跑动热区及关键时刻判定的深度复盘。这种「前瞻 + 解构」的双层结构，让临时观众也能快速获得专业视角。相关内容在 <a href="https://cn-sports-xiongmao.com">熊猫体育</a> 的赛事档案区有完整沉淀。</p>
+        </div>
+        <!-- 第二段 -->
+        <div class="section-item">
+            <span class="num">02 跨项目视野</span>
+            <h3>从绿茵到冰场的信息折叠</h3>
+            <p>不同于单项目垂直媒体，熊猫体育尝试以「项目比较」的方式拆解训练逻辑与规则演变。例如通过对比足球高位逼抢与冰球 forecheck 的战术相似性，或者分析网球发球效率如何借鉴棒球投球的数据模型。这种跨类别的思考方式，为资深爱好者提供了打破信息茧房的契机。社区讨论区每月会产出数篇此类原创专题。</p>
+        </div>
+        <!-- 第三段 -->
+        <div class="section-item">
+            <span class="num">03 数据可视化尝试</span>
+            <h3>让数字自己说话</h3>
+            <p>过去一年平台内建了轻量级数据看板，将球员跑动距离、控球率分布、射门预期值（xG）等指标转化为时序折线图与热力图。用户无需手动解析表格，即可直观感受比赛走势的波动。该功能目前对注册用户开放，并持续根据反馈调整指标维度。数据样本均来自公开比赛记录，保持可溯源性。</p>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要（以问答形式补充信息） -->
+    <div class="faq-mini">
+        <h2>▪ 常见疑问摘要</h2>
+        <div class="faq-item">
+            <strong>内容更新频率如何？</strong>
+            <p>主要赛程期间每日至少一篇赛事分析及一场焦点战复盘；休赛期维持每周三篇专题或人物特写。</p>
+        </div>
+        <div class="faq-item">
+            <strong>是否提供原始数据下载？</strong>
+            <p>部分公开统计数据（如联赛积分榜、球员基础数据）提供 CSV 导出，高级定制分析需通过内建查询界面获取。</p>
+        </div>
+        <div class="faq-item">
+            <strong>社区内容如何筛选？</strong>
+            <p>采用编辑推荐与用户投票结合的方式，突出有独立观点或资料详实的帖子，同时标记来源与引用链接。</p>
+        </div>
+    </div>
+
+    <!-- 页尾访问提示（自然嵌入链接） -->
+    <div class="footer-note">
+        <p>若希望进一步浏览赛事档案、战术图解与社区讨论，</p>
+        <div class="link-sentence">
+            可直接访问 <a href="https://cn-sports-xiongmao.com">熊猫体育</a> 获取完整内容集。
+        </div>
+        <small>杂志专题 · 信息页面 · 版本 2406</small>
+    </div>
+</div>
+</body>
+</html>
